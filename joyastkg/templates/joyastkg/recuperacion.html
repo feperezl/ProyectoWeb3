@@ -1,0 +1,128 @@
+<!--    PROYECTO PROG WEB V_001 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- boostrap css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">    <!-- css externo -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/assets/LOGO1.png" type="image/x-icon">
+    <title>~ Joyas 'The King Great' ~ </title>
+    <script src="validaciones.js"></script>
+    <style>      
+        form{
+            color: rgb(10, 3, 16); 
+            background: linear-gradient(200deg,white, black); 
+            background-repeat: space;
+            text-align: center;
+                 
+            font-family: 'Courier New', Courier, monospace;  
+        } 
+        h1{
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        body{
+            background: linear-gradient(200deg, white, black);
+        }
+        .center{
+            text-align: center;     
+        }
+        .text_field{
+            align-items: baseline;
+        }  
+        </style>
+</head>
+<body>
+    <header>       
+        <img src="assets\logo-1.png" alt="logo-1" class="logo">
+    </header>
+<!-- barra de navegacion o menu -->
+    <div>
+        <nav class="navbar navbar-expand-lg  navbar-dark">
+            <a href="#" class="navbar-brand"></a>
+                <img src="assets\LOGO1.png" alt="logo-peq" width="30" height="25"
+                class="d-inline-block align-top"
+                >
+            <button 
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#toggleMobileMenu"
+                aria-controls="toggleMobileMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"> </span>
+            </button>
+            <div class="collapse navbar-collapse" id="toggleMobileMenu">
+                <ul class="navbar-nav text-center">
+                    <li>
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="productos.html">Productos</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="ingreso.html">Ingreso</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    
+
+<!-- Recuperacion contraseña -->
+
+<div class="container">
+    <div class="center">
+        <h1>Recuperación de contraseña</h1>
+        <div>            
+            <form method="post" class="correo" id="ingresoCorreo" onsubmit="return enviarCorreo()">
+                <div class="cont-correo">
+                    <label for="correo" class="nombreCasilla">Correo electrónico:</label>
+                <input type="email" class="casilla" id="correo" name="correo" required placeholder="Ingresa tu correo..">
+                <div class="btn">
+                    <input type="button" value="Enviar" onclick="enviarCorreo()">    
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+ 
+
+<!-- footer -->
+
+<footer class="bg-dark text-light pt-5 pb-4">
+    <div class="container text-center text-md-left">
+        <div class="row text-center text-md-left">
+            <div class="col-md-6">
+                <h4>Contactanos. </h4> <!-- AQUI PUEDE IR EL MODAL-->
+                <br>
+                <p>joyastkg@tkg.cl</p>
+                <p>Valparaíso, Chile.</p>
+            </div>
+            <div class="col-md-6">
+                <p>Encuentranos en Redes Sociales como instagram</p> <!--ICONOS RRSS?-->
+                <a href="https://instagram.com/joyas.tkg?igshid=YmMyMTA2M2Y="><i class="nav-link">Instagram</i></a>
+            </div>
+        </div>
+        <div>
+            © 2023 TGK. Todos los derechos reservados.
+        </div>
+    </div>
+    
+</footer>
+
+<!-- boostrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+</body>
+</html>

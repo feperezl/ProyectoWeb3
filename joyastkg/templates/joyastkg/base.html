@@ -39,66 +39,66 @@
             <div class="collapse navbar-collapse" id="toggleMobileMenu">
                 <ul class="navbar-nav text-center">
                     <li>
-                        <a class="nav-link" href="index.html">Inicio</a>
+                        <a class="nav-link" href="{% url 'index' %}">Inicio</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="productos.html">Productos</a>
+                        <a class="nav-link" href="{% url 'productos' %}">Productos</a>
                     </li>
                     <li>
                         <a class="nav-link" href="contacto.html">Contacto</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="ingreso.html">Ingreso</a>
-                    </li>                 
+                        <a class="nav-link" href="{% url 'listar-producto' %}">Ingreso</a>
+                    </li>                             
                 </ul>
             </div>
         </nav>
     </div>
     
-    <!-- modal-->
+   
+{% block contenido %}
 
-    <div class="burbujas">
-        <div class="container text-center ">
-            <button class="btn btn-secondary btn-lg mt-4 mb-4" data-bs-toggle="modal" data-bs-target="#modal-1" onclick="burbuja()">
-                ¿Te gustan nuestros productos?
-            </button>
-    
-            <div class="modal fade " id="modal-1" data-bs-backdrop="static">
-                <div class="modal-dialog">
-                    <div class="modal-content ">
-    
-                        <div class="modal-header">
-                            <h4>Gracias por confiar en nosotros!</h4>
-                            <button class="btn-close" data-bs-dismiss="modal"> </button>
-                        </div>
-    
-                        <div class="modal-body">
-                            <p>¡Muchas gracias por visitar nuestra página! <br> Con cada visita de nuestros 
-                                clientes crecemos cada vez más y así podremos entregar siempre un buen 
-                                servicio, para nosotros es importante que hayas disfrutado al ver nuestras 
-                                piezas de joyerías y que tu experiencia de compra haya sido la mejor.
-                                 No olvides que si tienes dudas puedes contactarte con nosotros y 
-                                 estaremos encantados en responder cualquier pregunta. 
-                                Que tengas un excelente día. </p>
-                        </div>
-    
-                        <div class="modal-footer">
-                            <!-- <button class="btn btn-success" data-bs-dismiss="modal">
-                                Hasta Luego
-                            </button> -->
-                            <button class="btn btn-dark" data-bs-dismiss="modal">Nos vemos</button>
-                        </div>
-    
+{% endblock%}
+ <!-- modal-->
+
+ <div class="burbujas">
+    <div class="container text-center ">
+        <button class="btn btn-secondary btn-lg mt-4 mb-4" data-bs-toggle="modal" data-bs-target="#modal-1" onclick="burbuja()">
+            ¿Te gustan nuestros productos?
+        </button>
+
+        <div class="modal fade " id="modal-1" data-bs-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content ">
+
+                    <div class="modal-header">
+                        <h4>Gracias por confiar en nosotros!</h4>
+                        <button class="btn-close" data-bs-dismiss="modal"> </button>
                     </div>
+
+                    <div class="modal-body">
+                        <p>¡Muchas gracias por visitar nuestra página! <br> Con cada visita de nuestros 
+                            clientes crecemos cada vez más y así podremos entregar siempre un buen 
+                            servicio, para nosotros es importante que hayas disfrutado al ver nuestras 
+                            piezas de joyerías y que tu experiencia de compra haya sido la mejor.
+                             No olvides que si tienes dudas puedes contactarte con nosotros y 
+                             estaremos encantados en responder cualquier pregunta. 
+                            Que tengas un excelente día. </p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <!-- <button class="btn btn-success" data-bs-dismiss="modal">
+                            Hasta Luego
+                        </button> -->
+                        <button class="btn btn-dark" data-bs-dismiss="modal">Nos vemos</button>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-{% block contenido %}
-
-{% endblock%}
-    
 <!-- footer -->
 
     <footer class="bg-dark text-light pt-5 pb-4">

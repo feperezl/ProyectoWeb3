@@ -39,36 +39,43 @@
     </div>
 </div>
 
-<div class="container">
-    <br>
-    <h2> P R O D U C T O S</h2>
-    <p>Nuestros productos de joyería incluyen collares, colgantes, pendientes, pulseras y mucho más. 
-        Al mismo tiempo nos enorgullece poseer varios estilos de joyería que facilitan esa idea que 
-        tienes en mente de como vestirte y que accesorios usar, logrando la imagen perfecta que 
-        quieres proyectar al mundo. </p>
-</div>
 
-<!-- contenidos/productos -->
-
-<div class="container">
-    <div class="row row-cols-4 g-5">
-        {% for p in productos %}
-        <div class="col">
-            <div class="card">
-                {% if p.imagen %}
-                <img class="card-img-top" src="{{p.imagen.url}}" alt="prod-1">
-            {% endif %}
-                <div class="card-body">
-                    <h4 class="card-title">{{p.nombre}}</h4>
-                    <p class="card-text">{{p.precio | intcomma}}</p>
-                    <p class="card-text">{{p.peso}}</p>
-                    <p class="card-text">{{p.tipo}}</p>
+<br>
+    <!-- contenidos/productos -->
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <img src="{% static 'joyastkg/assets/card/pexels-danik-prihodko-15759516.jpg' %}" alt="foto-joya-1" class="card-img-top">
+                    <div class="card-body">
+                        <h4 class="card-title"> Cadenas</h4>
+                        <p class="card-text">Plata italiana 925.</p>
+                        <a href="joyastkg\templates\joyastkg\productos.html" class="btn stretched-link">VER MÁS</a>
+                    </div>
                 </div>
             </div>
-           
+            <div class="col-4">
+                <div class="card">
+                    <img src="{% static 'joyastkg/assets/card/pexels-zack-jarosz-1687719.jpg' %}" alt="foto-joya-3" class="card-img-top">
+                    <div class="card-body">
+                        <h4 class="card-title"> Colgantes</h4>
+                        <p class="card-text">El diseño que buscas.</p>
+                        <a href="productos.html" class="btn stretched-link">VER MÁS</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <img src="{% static 'joyastkg/assets/card/pexels-godisable-jacob-1191522.jpg' %}" alt="foto-joya-4" class="card-img-top">
+                    <div class="card-body">
+                        <h4 class="card-title"> Pendientes</h4>
+                        <p class="card-text">Las mejores piezas.</p>
+                        <a href="productos.html" class="btn stretched-link">VER MÁS</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        {% endfor %}
     </div>
-</div>    
+    <br>
 
 {% endblock %}

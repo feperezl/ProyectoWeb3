@@ -1,0 +1,112 @@
+.text-justify {
+    text-align: center;
+}
+
+body {
+    background-color: whitesmoke;
+    color: black;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+header {
+    background-color: black;
+    color: white;
+    text-justify:auto;
+    font-size: 30px;
+    text-align: center;
+    padding: 20px; /* control de espacio interior */
+}
+
+.logo {
+    display: inline;
+    align-items: center;
+    height: 100px;
+    width: 400px;
+    margin-left: 20px;
+}
+
+
+nav {
+    display: inline;
+    background-color: #1d1d1d;
+    text-align: center;
+    width: 100%;
+
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    
+}
+
+.card-body {
+    text-align: center;
+    color: whitesmoke;
+    background-color: grey;
+}
+
+.card-text {
+    color:  #1d1d1d;
+}
+
+.carouselProductos {
+    display: flex;
+}
+
+footer {
+    background: #1d1d1d;
+}
+
+.cuadroc{
+    position: relative;
+    left: 15px;
+    top: 10px;
+}
+.txtco{
+    position: relative;
+    top: 10px;
+    left: 5px;
+}
+.olvidaste{
+    position: relative;
+    top: 10px;
+    text-decoration: none;
+    color: rgb(241, 7, 7);
+}
+.formu{
+    height: 200px;
+}
+.boton{
+    position: relative;
+    top: 10px;
+    cursor: pointer;
+    border: 0;
+    color: #000;
+    background: wheat;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font: 600 22px 'Montserrat';
+    box-shadow: 0 6px 0 #ff0030;
+    transition: .3s;
+}
+.boton:active{
+    transform: translateY(5px);
+    box-shadow: 0 3px 0 #ff0030;
+}
+.correo{
+    height: 200px;
+    position: relative;  
+}
+.nombreCasilla{
+    position: relative;
+}
