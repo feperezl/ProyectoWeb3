@@ -1,0 +1,74 @@
+<!--    PROYECTO PROG WEB V_001 -->
+{% extends 'joyastkg/base.html' %}
+{% block contenido %}
+{% load humanize %}
+{% load static %}
+
+    
+<!-- barra de inicio -->
+    <div class="container">
+        <h2>N U E S T R A 
+            <br>
+            M A R C A</h2>
+        <p>Joyas 'The King Great' se distingue por la calidad de sus piezas utilizando 
+            solo materiales de la más alta calidad y diseñadas por expertos artesanos logrando
+            verdaderas obras de arte en el mundo de la joyería. Al elegir 'The King Great' 
+            obtienes piezas que combinaran y resaltaran cada atuendo que decidas usar acompañándote
+            siempre gracias a nuestros estándares de calidad, ideal para quienes buscan joyería que dure 
+            toda la vida.</p>
+    </div>
+
+<!-- carousel -->
+<div class="container max-height d-flex align-items-center">
+
+    <div 
+        id="carouselProductos" 
+        class="carousel slide" 
+        data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'joyastkg/assets/banner/pexels-coppertist-wu-16124709.jpg' %}" class="d-block w-100" alt="joyas-1">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'joyastkg/assets/banner/pexels-grawal-7509249.jpg' %}" class="d-block w-100" alt="joyas-2">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'joyastkg/assets/banner/pexels-lalesh-aldarwish-147637.jpg' %}" class="d-block w-100" alt="joyas-3">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <br>
+    <h2> P R O D U C T O S</h2>
+    <p>Nuestros productos de joyería incluyen collares, colgantes, pendientes, pulseras y mucho más. 
+        Al mismo tiempo nos enorgullece poseer varios estilos de joyería que facilitan esa idea que 
+        tienes en mente de como vestirte y que accesorios usar, logrando la imagen perfecta que 
+        quieres proyectar al mundo. </p>
+</div>
+
+<!-- contenidos/productos -->
+
+<div class="container">
+    <div class="row row-cols-4 g-5">
+        {% for p in productos %}
+        <div class="col">
+            <div class="card">
+                {% if p.imagen %}
+                <img class="card-img-top" src="{{p.imagen.url}}" alt="prod-1">
+            {% endif %}
+                <div class="card-body">
+                    <h4 class="card-title">{{p.nombre}}</h4>
+                    <p class="card-text">{{p.precio | intcomma}}</p>
+                    <p class="card-text">{{p.peso}}</p>
+                    <p class="card-text">{{p.tipo}}</p>
+                </div>
+            </div>
+           
+        </div>
+        {% endfor %}
+    </div>
+</div>    
+
+{% endblock %}

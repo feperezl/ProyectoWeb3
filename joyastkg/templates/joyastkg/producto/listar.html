@@ -1,0 +1,34 @@
+{% extends 'joyastkg/base.html' %}
+{% load humanize %}
+{% block contenido %}
+
+    <section>
+        <div class="table-hover table-responsive mt-4">
+
+            <table class="table table-stripped">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Tipo</th>
+                    <th>Precio</th>
+                    <th>Peso</th>
+                    <th>Imagen</th>
+                </tr>
+                {% for p in productos %}
+                <tr>
+                    <td>{{p.nombre}}</td>
+                    <td>{{p.tipo}}</td>
+                    <td>{{p.precio | intcomma }}</td>
+                    <td>{{p.peso}}</td>
+                    {% if p.imagen %}
+                    <td> <img src="{{p.imagen.url}}" alt="imagen1" style="width: 90px;"></td>
+                    {% endif %}
+                    <td><a href="{% url 'modificar-producto' p.id %}" class="btn btn-secondary">Modificar</a></td>
+                    <td><a href="{% url 'eliminar-producto' p.id %}" class="btn btn-danger">Eliminar</a></td>
+                    <td></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
+
+{% endblock %}
