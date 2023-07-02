@@ -1,0 +1,22 @@
+<!--    PROYECTO PROG WEB V_001 -->
+{% extends 'joyastkg/base.html' %}
+{% block contenido %}
+{% load humanize %}
+{% load static %}
+
+
+
+<!-- formulario de ingreso sesion -->
+
+<h2>Log In</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Log In</button>
+</form>
+
+<script src="{% static 'validaciones.js' %}"></script>
+
+<br>
+
+{% endblock %}

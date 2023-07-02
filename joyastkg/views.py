@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.decorators import login_required
 from .models import Producto
 from .forms import ProductoForm
 
@@ -21,10 +20,12 @@ def disponible(request):
 
     return render(request, 'joyastkg/productos.html', datos)
 
+def contacto(request):
+    
+    productos = Producto.objects.all()
+    datos = {"productos": productos}
 
-def adm(request):
-    return render(request,'joyastkg/ingreso.html')
-
+    return render(request, 'joyastkg/contacto.html', datos)
 
 def agregarProducto(request):
 
@@ -40,7 +41,6 @@ def agregarProducto(request):
 
     return render(request, 'joyastkg/producto/agregar.html',datos)
 
-@login_required
 def listarProducto(request):
     productos = Producto.objects.all()
     datos = {'productos': productos}
@@ -63,4 +63,3 @@ def eliminarProducto(request, id):
     producto = get_object_or_404(Producto, id=id)
     producto.delete()
     return redirect(to="listar-producto")
-    
