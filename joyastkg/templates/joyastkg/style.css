@@ -63,6 +63,11 @@ nav a {
     display: flex;
 }
 
+.cart-icon {
+    color: #000;
+    font-size: 24px;
+  }
+  
 footer {
     background: #1d1d1d;
 }
@@ -110,3 +115,4 @@ footer {
 .nombreCasilla{
     position: relative;
 }
+
