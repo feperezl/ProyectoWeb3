@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+    <h1>Registro de usuario</h1>
+    <form method="post" class="formu" id="registroUsuario">
+        {% csrf_token %}
+        <div class="txt_field">
+            <input type="text" id="id_username" name="username" required>
+            <label for="id_username">Usuario</label>
+        </div>
+        <div class="txt_field">
+            <input type="password" id="id_password1" name="password1" required>
+            <label for="id_password1">Contraseña</label>
+        </div>
+        <div class="txt_field">
+            <input type="password" id="id_password2" name="password2" required>
+            <label for="id_password2">Confirmar contraseña</label>
+        </div>
+        <button class="boton" type="submit">Registrarse</button>
+    </form>
+{% endblock %}

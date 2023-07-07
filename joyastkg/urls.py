@@ -8,6 +8,8 @@ urlpatterns = [
     path('contacto', views.contacto, name='contacto'),
     path('admin/', admin.site.urls),
     path("accounts/", include("django.contrib.auth.urls")),
+    path('registro/', views.registro, name='registro'),
+    path('carrito/', views.mostrarCarrito, name='carrito'),
     path('logout/', views.logout_view, name='logout'),
     path('agregar-producto', views.agregarProducto, name='agregar-producto'),
     path('listar-producto', views.listarProducto, name='listar-producto'),
