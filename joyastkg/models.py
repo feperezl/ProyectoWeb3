@@ -19,3 +19,12 @@ class Producto(models.Model):
 
     def __str__(self):
         return self.nombre
+
+class Carrito(models.Model):
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+    producto = models.ManyToManyField(Producto, through='bolsaCompra')
+
+class bolsaCompra(models.Model):
+    carrito = models.ForeignKey(Carrito, on_delete=models.CASCADE)
+    producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+    cantidad = models.PositiveIntegerField(default=1)
