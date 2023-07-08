@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import UserCreationForm
 from .models import Producto, Carrito, bolsaCompra
+from joyastkg.models import Carrito, Producto, bolsaCompra
 from .forms import ProductoForm
 
 # Create your views here.
@@ -89,26 +90,44 @@ def eliminarProducto(request, id):
     producto.delete()
     return redirect(to="listar-producto")
 
-@login_required
 def mostrarCarrito(request):
-    if request.user.is_authenticated:  #con sesion
+    if request.user.is_authenticated:
         try:
             carrito = Carrito.objects.get(usuario=request.user)
             articulos = bolsaCompra.objects.filter(carrito=carrito)
             total = 0
             for articulo in articulos:
-                total = total + articulo.producto.precio * articulo.cantidad
+                total += articulo.producto.precio * articulo.cantidad
         except Carrito.DoesNotExist:
             carrito = None
             articulos = None
             total = 0
-    else:  #sin sesion
+    else:
         carrito = None
         articulos = None
         total = 0
-    return render(request,'joyastkg/carrito.html', {'carrito': carrito, 'articulos': articulos,'total': total})
 
-def agregarCarro(request):
+    # eliminar el producto
+    if request.method == 'POST':
+        bolsa_id = request.POST.get('bolsa_id')
+        bolsa = bolsaCompra.objects.get(id=bolsa_id)
+        bolsa.delete()
+
+    return render(request, 'joyastkg/carrito.html', {'carrito': carrito, 'articulos': articulos, 'total': total})
+
+
+def agregarCarrito(request):
     if request.method == 'POST':
         producto_id = request.POST.get('producto_id')
-    return redirect(to='carrito')
+        cantidad = int(request.POST.get('cantidad'))
+
+        # Obtener el producto y el carrito
+        producto = Producto.objects.get(id=producto_id)
+        carrito, _ = Carrito.objects.get_or_create(usuario=request.user)
+
+        bolsa = bolsaCompra.objects.create(carrito=carrito, producto=producto, cantidad=cantidad)
+        bolsa.save()
+
+        return redirect('carrito')
+
+
